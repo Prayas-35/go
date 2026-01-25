@@ -73,7 +73,7 @@ func main() {
 
 	api := app.Group("/api")
 
-	routes.AuthRoutes(api)
+	routes.AuthRoutes(api, cfg.JWTSecret)
 
 	app.Listen(":" + cfg.ServerPort)
 	log.Println("Server is running on port", cfg.ServerPort)
